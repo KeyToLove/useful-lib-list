@@ -1,0 +1,13 @@
+lockfileVersion: 5.4
+
+specifiers:
+  json-templater: ^1.2.0
+
+devDependencies:
+  json-templater: 1.2.0
+
+packages:
+
+  /json-templater/1.2.0:
+    resolution: {integrity: sha512-u2l5PGQuLs6eoeAW6z7LOgyk17d7v4LutnO630ZQt1Nw9XxzepU4vD1HDlYV45d0aR3tBek4AK6GYWbEI0nhOQ==}
+    dev: true

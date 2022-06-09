@@ -1,0 +1,15 @@
+{
+  "name": "json-templater",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "demo": "node demo.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "json-templater": "^1.2.0"
+  }
+}
