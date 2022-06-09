@@ -4,6 +4,6 @@
  [json-templater](https://github.com/lightsofapollo/json-templater)
 
 ## 例子
-```
+``` 
 npm run demo
 ```
