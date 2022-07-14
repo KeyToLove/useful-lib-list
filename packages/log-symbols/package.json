@@ -1,0 +1,16 @@
+{
+  "name": "log-symbols",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type":"module",
+  "scripts": {
+    "test": "node demo.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "log-symbols": "^5.1.0"
+  }
+}
