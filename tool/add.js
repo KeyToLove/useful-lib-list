@@ -1,4 +1,4 @@
-// 通过npm run xxx 来创建一个新的package
+// 通过npm run add xxx 来创建一个新的package
 import fs from 'fs'
 import path from 'path'
 import { execaCommandSync } from 'execa'
