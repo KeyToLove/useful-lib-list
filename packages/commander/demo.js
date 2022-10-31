@@ -1,29 +1,42 @@
-// 实现一个命令行解析命令行pizza相关信息的功能
-// 可以开启debug模式,展示所有选项信息
-// 可以指定尺寸,默认small,只能是 small medium large 中的一个
-// 必须指定口味
+const { Command } = require('commander')
 
-const { Command, Option } = require('commander')
 const program = new Command()
 
+// 解析cmd
+program.parse()
+
+// 定义一系列command，命中了则会触发相应的逻辑
 program
-  .option('-d --debug', 'debug模式展示更多信息 ')
-  .addOption(
-    new Option('-s --size <size>', '选择pizza尺寸，默认small')
-      .default('small')
-      .choices(['small', 'medium', 'large'])
+  .command('dev')
+  .option(
+    '-f --force',
+    'Force dep pre-optimization regardless of whether deps have changed'
   )
-  .requiredOption('-p, --pizza-type <type>', '指定pizza的口味')
+  .description('Run varlet development environment')
+  .action(async options => {
+    // 这里可以接受传递给option的额外配置（只能是声明中的选项配置，否则会抛出错误）
+    console.log(options)
+    console.log('dev~~~~~')
+  })
 
-program.parse(process.argv)
+program
+  .command('build')
+  .description('Build varlet site for production')
+  .action(async () => {
+    console.log('build~~~~~')
+  })
 
-const options = program.opts()
+program
+  .command('dev:vite')
+  .description('Use vite start server for development')
+  .action(async () => {
+    console.log('dev:vite~~~~')
+  })
 
-const { debug, size, pizzaType } = options
-
-// 是否开启debug
-if (debug) {
-  console.log(options)
-}
-
-console.log(`我选择了${pizzaType}口味的pizza,大小为${size}`)
+// 兜底command，任何未声明的program都会执行该段逻辑
+program.on('command:*', async ([cmd]) => {
+  // 弹出help菜单，提示用户可选command，以及其对应的具体信息和使用方式
+  program.outputHelp()
+  console.log(`error:cmd is ${cmd}`)
+  process.exitCode = 1
+})
