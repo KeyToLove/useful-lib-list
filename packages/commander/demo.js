@@ -2,9 +2,6 @@ const { Command } = require('commander')
 
 const program = new Command()
 
-// 解析cmd
-program.parse()
-
 // 定义一系列command，命中了则会触发相应的逻辑
 program
   .command('dev')
@@ -40,3 +37,6 @@ program.on('command:*', async ([cmd]) => {
   console.log(`error:cmd is ${cmd}`)
   process.exitCode = 1
 })
+
+// 解析cmd
+program.parse()
