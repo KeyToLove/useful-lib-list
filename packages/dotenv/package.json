@@ -1,0 +1,16 @@
+{
+  "name": "dotenv",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "node demo.js "
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "dotenv-expand": "^10.0.0"
+  }
+}
